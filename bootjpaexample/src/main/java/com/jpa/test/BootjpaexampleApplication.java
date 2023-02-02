@@ -53,12 +53,35 @@ public class BootjpaexampleApplication {
 		 */
 		//How to get the data?
 		//findById(id)->return optional containing your data
-		Iterable<User> itr=userRepository.findAll();
-		Iterator<User> iterator=itr.iterator();
-		while(iterator.hasNext()) {
-			User user=iterator.next();
-			System.out.println(user);
-		}
+		/*
+		 * Iterable<User> itr=userRepository.findAll(); 
+		 * Iterator<User> iterator=itr.iterator(); 
+		 * while(iterator.hasNext()) { User
+		 * user=iterator.next(); 
+		 * System.out.println(user); 
+		 * }
+		 */
+		//Deleting the user elements.
+		/*
+		 * userRepository.deleteById(3); 
+		 * System.out.println("Deleted"); 
+		 * Iterable <User> allusers=userRepository.findAll();
+		 * allusers.forEach(user->System.out.println(user));
+		 * userRepository.deleteAll(allusers);
+		 */
+		/*
+		 * List<User> users=userRepository.findByName("Gautam");
+		 * users.forEach(e->System.out.println(e));
+		 */
+		/*
+		 * List<User> allUsers=userRepository.getAllUser();
+		 * allUsers.forEach(e->System.out.println(e));
+		 * System.out.println("------------------------------------------------------");
+		 * List<User> userByName=userRepository.getUserByName("Kishan Kumar","Gaya");
+		 * userByName.forEach(e->System.out.println(e));
+		 */
+		//Retrieving the data through native SQL queries.
+		userRepository.getUsers().forEach(e->System.out.println(e));
 	}
 
 }
